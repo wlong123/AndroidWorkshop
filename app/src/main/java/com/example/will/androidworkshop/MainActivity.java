@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import java.lang.Math;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +19,11 @@ public class MainActivity extends AppCompatActivity {
 
     private Button start;
     private Button quit;
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +32,67 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        start = (Button) findViewById(R.id.start_button);
+        quit = (Button) findViewById(R.id.stop_button);
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button4 = (Button) findViewById(R.id.button4);
 
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                game = true;
+                start.setText(R.string.Started);
+//                playGame();
+            }
+        });
+
+        quit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                game = false;
+                start.setText(R.string.Start);
+            }
+        });
     }
+
+    public void playGame() {
+        while (game) {
+            int nextButton = (int)(Math.random() * 4 + 1);
+            if (nextButton == 1) {
+                button1.setText(R.string.click);
+            }
+            else if (nextButton == 2) {
+                button2.setText(R.string.click);
+            }
+            else if (nextButton == 3) {
+                button3.setText(R.string.click);
+            }
+            else if (nextButton == 4) {
+                button4.setText(R.string.click);
+            }
+            game = false;
+        }
+    }
+//
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        while (!game) { }
+//            while (game) {
+//                int nextButton = (int) (Math.random() * 4 + 1);
+//                if (nextButton == 1) {
+//                    button1.setText(R.string.click);
+//                } else if (nextButton == 2) {
+//                    button2.setText(R.string.click);
+//                } else if (nextButton == 3) {
+//                    button3.setText(R.string.click);
+//                } else if (nextButton == 4) {
+//                    button4.setText(R.string.click);
+//                }
+//            }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
