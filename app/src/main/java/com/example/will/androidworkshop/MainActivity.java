@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
 
         background = (ConstraintLayout) findViewById(R.id.background);
         start = (Button) findViewById(R.id.start_button);
@@ -85,51 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-//        start.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                game = true;
-//                start.setText(R.string.Started);
-//            }
-//        });
-//
-//        quit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                game = false;
-//                start.setText(R.string.Start);
-//            }
-//        });
-//        playGame();
     }
-
-    public void playGame() {
-        while (game) {
-            int nextButton = (int)(Math.random() * 4 + 1);
-            if (nextButton == 1) {
-                button1.setText(R.string.click);
-            }
-            else if (nextButton == 2) {
-                button2.setText(R.string.click);
-            }
-            else if (nextButton == 3) {
-                button3.setText(R.string.click);
-            }
-            else if (nextButton == 4) {
-                button4.setText(R.string.click);
-            }
-            game = false;
-        }
-    }
-//
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        for(int i=0; i<10; i++){
-//
-//        }
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
