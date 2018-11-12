@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean game = false;
     private int score = 0;
-    
+
 
     private Button start;
     private Button quit;
