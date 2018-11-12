@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:id="@+id/background">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click a button when its text lights up!"
+        android:text="Click a button to light up the app!"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="145dp" />
@@ -34,7 +35,7 @@
             android:layout_marginEnd="215dp"
             android:layout_marginRight="215dp"
             android:background="@color/green"
-            android:text="Start" />
+            android:text="Random" />
 
         <Button
             android:id="@+id/stop_button"
@@ -47,7 +48,7 @@
             android:layout_marginLeft="214dp"
             android:layout_marginBottom="414dp"
             android:background="@color/red"
-            android:text="Stop" />
+            android:text="Reset" />
 
         <Button
             android:id="@+id/button1"
